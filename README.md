@@ -37,7 +37,7 @@ This repository contains tw scripts that automate the deployment of a Kubernetes
 | **Privileges** | Root or sudo access |
 | **Internet** | Access to download packages |
 
-## 🛠️ Installatio
+## 🛠️ Installation
 
 ### Control Plane (Master) Node
 
@@ -45,7 +45,13 @@ This repository contains tw scripts that automate the deployment of a Kubernetes
    ```bash
    git clone https://github.com/yourusername/kubernetes-setup.git
    cd kubernetes-setup
-
-  **Join Worker to Master**:
+   ```
+2. **Master Token**
    ```bash
-kubeadm token create --print-join-command
+   kubeadm token create --print-join-command
+   ```
+
+3. **Remove the Taint from the Master Node**
+   ```bash
+   kubectl taint nodes <master-node-name> node-role.kubernetes.io/control-plane:NoSchedule-
+   ```
