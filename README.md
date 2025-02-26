@@ -45,3 +45,7 @@ This repository contains tw scripts that automate the deployment of a Kubernetes
    ```bash
    git clone https://github.com/yourusername/kubernetes-setup.git
    cd kubernetes-setup
+
+  **Join Worker to Master**:
+   ```bash
+kubeadm token create --print-join-command
